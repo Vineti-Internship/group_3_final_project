@@ -1,10 +1,10 @@
 class CreateTeachers < ActiveRecord::Migration[5.2]
   def change
     create_table :teachers do |t|
-      t.string :first_name
-      t.string :last_name
-      t.string :password
-      t.string :email
+      t.string :first_name, default: "", null:false
+      t.string :last_name, default: "", null:false
+      t.string :password, default: "", null:false
+      t.string :email, default: "", null:false, unique: true
 
       t.timestamps
     end
