@@ -4,4 +4,7 @@ class Student < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  # Add validators
+  validates :first_name, :last_name, :password, :email, presence: true
+
 end
