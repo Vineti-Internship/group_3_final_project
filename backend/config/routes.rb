@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :grades
   resources :exams
   resources :courses
-  resources :sessions, only: [:create, :distroy]
+  resources :sessions, only: [:create, :destroy]
   # root to: "home#index"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
