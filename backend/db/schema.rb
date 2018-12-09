@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_09_130654) do
+ActiveRecord::Schema.define(version: 2018_12_09_152415) do
 
   create_table "courses", force: :cascade do |t|
     t.string "name", default: "", null: false
@@ -56,7 +56,6 @@ ActiveRecord::Schema.define(version: 2018_12_09_130654) do
   create_table "students", force: :cascade do |t|
     t.string "first_name", default: "", null: false
     t.string "last_name", default: "", null: false
-    t.string "password", default: "", null: false
     t.string "email", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -71,7 +70,6 @@ ActiveRecord::Schema.define(version: 2018_12_09_130654) do
   create_table "teachers", force: :cascade do |t|
     t.string "first_name", default: "", null: false
     t.string "last_name", default: "", null: false
-    t.string "password", default: "", null: false
     t.string "email", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
