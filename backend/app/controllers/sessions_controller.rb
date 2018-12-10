@@ -1,10 +1,10 @@
-class SessionController < ApplicationController
+class SessionsController < ApplicationController
 
   def create
     @user = Student.where(email: params[:email]).first || Teacher.where(email: params[:email]).first
 
     if @user&.valid_password?(params[:password])
-      render json: @user
+      render json: @user.authentication_token
     else
       head(:unauthorized)
     end
@@ -12,7 +12,7 @@ class SessionController < ApplicationController
   end
 
   def destroy
-    current_user.authentication_token = nil
+    # current_user.authentication_token = nil
   end
 
   # Only allow a trusted parameter "white list" through.
