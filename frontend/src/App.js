@@ -10,12 +10,6 @@ import Header from "./components/header";
 
 class App extends Component {
 
-  constructor(props) {
-    super(props);
-    localStorage.setItem('user', JSON.stringify('{"name":"Artur"}'));
-    console.log('store ', store.getState());
-  }
-
   render() {
     return (
       <div className="App">
