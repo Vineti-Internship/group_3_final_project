@@ -6,6 +6,7 @@ import {HomePage} from "./pages/homePage";
 import {PrivateRoute} from "./components/privateRoute";
 import {NotFoundPage} from "./pages/notFoundPage";
 import {store} from "./helpers/store";
+import Header from "./components/header";
 
 class App extends Component {
 
@@ -18,6 +19,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Header/>
         <BrowserRouter>
           <Switch>
             <PrivateRoute exact path="/" component={HomePage} />
