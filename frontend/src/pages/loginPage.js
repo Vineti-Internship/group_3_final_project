@@ -1,6 +1,9 @@
 import React from 'react';
 import {connect} from "react-redux";
 import {userActions} from "../ations/userAction";
+import Button from '@material-ui/core/Button';
+import Input from '@material-ui/core/Input';
+import Typography from "@material-ui/core/Typography";
 
 class LoginPage extends React.Component {
 
@@ -27,31 +30,33 @@ class LoginPage extends React.Component {
     const { username, password } = this.state;
     const { dispatch } = this.props;
     if (username && password) {
-      console.log('username :', username);
-      console.log('password :', password);
+      // console.log('username :', username);
+      // console.log('password :', password);
 
-      // dispatch(userActions.login(username, password));
+      dispatch(userActions.login(username, password));
     }
   };
 
   render(){
     const { username, password } = this.state;
     return(
-      <div>
-        <h2>Login</h2>
+      <div className='login-component'>
+        <Typography variant="h3" color="inherit">
+          Login
+        </Typography>
         <form name="form" onSubmit={this.handleSubmit}>
           <div>
-            <label>Username</label>
-            <input type="text" name="username" value={username} onChange={this.handleChange} />
+            <Typography>Username</Typography>
+            <Input type="text" name="username" value={username} onChange={this.handleChange} />
           </div>
 
           <div>
-            <label>Password</label>
-            <input type="password" name="password" value={password} onChange={this.handleChange} />
+            <Typography>Password</Typography>
+            <Input type="password" name="password" value={password} onChange={this.handleChange} />
           </div>
 
           <div>
-            <button onClick={this.handleSubmit}>Login</button>
+            <Button variant="contained" color="primary" onClick={this.handleSubmit}>Login</Button>
           </div>
         </form>
       </div>
