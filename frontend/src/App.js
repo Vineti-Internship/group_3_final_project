@@ -5,10 +5,15 @@ import {LoginPage} from "./pages/loginPage";
 import {HomePage} from "./pages/homePage";
 import {PrivateRoute} from "./components/privateRoute";
 import {NotFoundPage} from "./pages/notFoundPage";
-import {store} from "./helpers/store";
 import Header from "./components/header";
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    localStorage.setItem('user', JSON.stringify('{"name":"Artur"}'));
+    // console.log('store ', store.getState());
+  }
 
   render() {
     return (
