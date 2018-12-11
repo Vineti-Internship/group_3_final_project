@@ -1,13 +1,15 @@
 import React from 'react';
 import connect from "react-redux/es/connect/connect";
-import { Link } from 'react-router-dom';
+import {TeacherView} from "../components/teacher/teacherView";
 
 class HomePage extends React.Component{
   render() {
+    //should render a component depending on user type....................
     return (
       <div>
-        <h1>HomePage</h1>
-        <Link to="/login">LogOut</Link>
+        <TeacherView />
+        {/*<StudentView />*/}
+        {/*<AdminView />*/}
       </div>
     );
   }
