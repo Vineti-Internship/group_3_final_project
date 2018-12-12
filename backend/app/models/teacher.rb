@@ -5,7 +5,7 @@ class Teacher < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_one :section
+  has_one :section, dependent: :destroy
 
   # Add Validators
   validates :first_name, :last_name, :password, :email, presence: true

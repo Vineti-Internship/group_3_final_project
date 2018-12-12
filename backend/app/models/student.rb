@@ -4,8 +4,10 @@ class Student < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  has_many :grades, dependent: :destroy
   # Association with sections
-  has_and_belongs_to_many :sections
+  has_and_belongs_to_many :sections, dependent: :destroy
 
   # Add validators
   validates :first_name, :last_name, :password, :email, presence: true
