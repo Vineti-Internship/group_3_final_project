@@ -5,8 +5,6 @@ import List from "@material-ui/core/es/List";
 import Typography from "@material-ui/core/Typography";
 
 export const ExamsLists = (props) => {
-  console.log(props.examsFakeData);
-
   return (
     <>
       {
