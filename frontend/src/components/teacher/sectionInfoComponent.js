@@ -8,7 +8,7 @@ export const SectionInfo = (props) => {
   return (
     <>
       <Typography variant="h5" color="inherit">
-        Section Name
+        Section Info
       </Typography>
 
       <List>{initTableItems(props.studentsFakeData)}</List>
