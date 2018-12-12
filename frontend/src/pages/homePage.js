@@ -1,6 +1,7 @@
 import React from 'react';
 import connect from "react-redux/es/connect/connect";
 import {TeacherView} from "../components/teacher/teacherView";
+import {StudentView} from "../components/students/StudentView";
 
 class HomePage extends React.Component{
   render() {
@@ -8,7 +9,7 @@ class HomePage extends React.Component{
     return (
       <div>
         <TeacherView />
-        {/*<StudentView />*/}
+        {/* <StudentView /> */}
         {/*<AdminView />*/}
       </div>
     );
