@@ -12,17 +12,29 @@ class PopupAddExamContent extends React.Component {
           Add exam details
         </DialogContentText>
         <TextField
+          id="topic"
+          onChange={this.changeHandler}
           autoFocus
           margin="dense"
           label="Exam Topic"
           fullWidth/>
         <TextField
+          id="date"
+          onChange={this.changeHandler}
           margin="dense"
           label="Exam Date"
           fullWidth/>
       </DialogContent>
     );
-  }
+  };
+
+  changeHandler = (event) => {
+    let data = {};
+
+    data[event.target.id] = event.target.value;
+
+    this.props.sendValueToPopup(data);
+  };
 }
 
 export default PopupAddExamContent;
