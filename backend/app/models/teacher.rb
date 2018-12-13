@@ -6,6 +6,7 @@ class Teacher < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one :section, dependent: :destroy
+  
   belogs_to :admin
 
   # Add Validators

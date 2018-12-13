@@ -6,8 +6,8 @@ class Student < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :grades, dependent: :destroy
-  # Association with sections
   has_and_belongs_to_many :sections, dependent: :destroy
+  
   belogs_to :admin
 
   # Add validators

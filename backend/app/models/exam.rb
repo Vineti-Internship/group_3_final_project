@@ -1,5 +1,8 @@
 class Exam < ApplicationRecord
-  belongs_to :course
+  
   has_one :grade, dependent: :destroy
+
+  belongs_to :course
   belogs_to :admin
+  
 end

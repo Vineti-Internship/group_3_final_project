@@ -13,6 +13,7 @@ class Admin < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  # Validation for admin nickname
   validates :nickname, presence: true, uniqueness: true
 
 end
