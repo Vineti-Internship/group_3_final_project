@@ -3,6 +3,6 @@ class GradeSerializer < ActiveModel::Serializer
   
   has_one :exam
   has_one :student
-  has_mone :admin
+  has_one :admin
 
 end
