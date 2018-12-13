@@ -12,11 +12,11 @@ import Popup from "./components/popups/popup";
 
 class App extends Component {
 
-  constructor(props) {
-    super(props);
-    //add test user in LocalStorage, to see the HomePage......................
-    localStorage.setItem('user', JSON.stringify('{"name":"Artur"}'));
-  }
+  // constructor(props) {
+  //   super(props);
+  //   //add test user in LocalStorage, to see the HomePage......................
+  //   // localStorage.setItem('user', JSON.stringify('{"name":"Artur"}'));
+  // }
 
   //callBack function used to close popup..................
   closePopup = () => {
@@ -44,12 +44,12 @@ class App extends Component {
   }
 }
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
   const {isOpened, popupType} = state.popup;
   return {
     isOpened,
     popupType
   };
-}
+};
 
 export default connect(mapStateToProps)(App);

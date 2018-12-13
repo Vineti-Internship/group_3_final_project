@@ -3,7 +3,7 @@ import {LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE, LOGOUT} from "../constants/
 let user = JSON.parse(localStorage.getItem('user'));
 const initialState = user ? { loggedIn: true, user } : {};
 
-export default function authentication(state = initialState, action) {
+const authentication = (state = initialState, action) => {
   switch (action.type) {
     case LOGIN_REQUEST:
       return {
@@ -22,4 +22,6 @@ export default function authentication(state = initialState, action) {
     default:
       return state
   }
-}
+};
+
+export default authentication;

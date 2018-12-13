@@ -32,12 +32,12 @@ class ExamsInfo extends React.Component {
   }
 }
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
   const {isOpened, popupType} = state.popup;
   return {
     isOpened,
     popupType
   };
-}
+};
 
 export default connect(mapStateToProps)(ExamsInfo);

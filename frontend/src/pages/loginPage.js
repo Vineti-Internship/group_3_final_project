@@ -64,11 +64,11 @@ class LoginPage extends React.Component {
   }
 }
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
   const { loggingIn } = state.authentication;
   return {
     loggingIn
   };
-}
+};
 
 export default connect(mapStateToProps)(LoginPage);

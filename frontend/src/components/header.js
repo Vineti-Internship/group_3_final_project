@@ -15,7 +15,7 @@ const styles = {
   }
 };
 
-function Header(props) {
+const Header = (props) => {
   const {classes} = props;
   return (
     <div className={classes.root}>
@@ -31,7 +31,7 @@ function Header(props) {
       </AppBar>
     </div>
   );
-}
+};
 
 Header.propTypes = {
   classes: PropTypes.object.isRequired,

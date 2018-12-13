@@ -5,7 +5,7 @@ const initialState = {
   popupType: ''
 };
 
-export default function popup(state = initialState, action) {
+const popup = (state = initialState, action) => {
   switch (action.type) {
     case OPEN_POPUP:
       return {
@@ -20,4 +20,6 @@ export default function popup(state = initialState, action) {
     default:
       return state;
   }
-}
+};
+
+export default popup;

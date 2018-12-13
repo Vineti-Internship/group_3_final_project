@@ -2,6 +2,19 @@ import {userService} from "../services/userService";
 import {LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE, LOGOUT} from "../constants/userConstants";
 
 const login = (username, password) => {
+
+  const request = (user) => {
+    return {type: LOGIN_REQUEST, user}
+  };
+
+  const success = (user) => {
+    return {type: LOGIN_SUCCESS, user}
+  };
+
+  const failure = (error) => {
+    return {type: LOGIN_FAILURE, error}
+  };
+
   return dispatch => {
     dispatch(request({username}));
 
@@ -16,18 +29,6 @@ const login = (username, password) => {
         }
       );
   };
-
-  function request(user) {
-    return {type: LOGIN_REQUEST, user}
-  }
-
-  function success(user) {
-    return {type: LOGIN_SUCCESS, user}
-  }
-
-  function failure(error) {
-    return {type: LOGIN_FAILURE, error}
-  }
 };
 
 const logout = () => {
