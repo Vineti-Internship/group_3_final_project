@@ -4,7 +4,15 @@ import {ExamInfoListItem} from "./examInfoListItem";
 import List from "@material-ui/core/es/List";
 import Typography from "@material-ui/core/Typography";
 
-export const ExamsLists = (props) => {
+const initTableItems = (data) => {
+  return data.map((element, index) =>
+    <ListItem key={index}>
+      <ExamInfoListItem data={element}/>
+    </ListItem>
+  );
+};
+
+const ExamsLists = (props) => {
   return (
     <>
       {
@@ -23,10 +31,4 @@ export const ExamsLists = (props) => {
   );
 };
 
-const initTableItems = (data) => {
-  return data.map((element, index) =>
-    <ListItem key={index}>
-      <ExamInfoListItem data={element}/>
-    </ListItem>
-  );
-};
+export default ExamsLists;

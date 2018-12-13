@@ -1,5 +1,5 @@
-import {userConstants} from '../constants/userConstants';
 import {userService} from "../services/userService";
+import {LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE, LOGOUT} from "../constants/userConstants";
 
 const login = (username, password) => {
   return dispatch => {
@@ -18,21 +18,21 @@ const login = (username, password) => {
   };
 
   function request(user) {
-    return {type: userConstants.LOGIN_REQUEST, user}
+    return {type: LOGIN_REQUEST, user}
   }
 
   function success(user) {
-    return {type: userConstants.LOGIN_SUCCESS, user}
+    return {type: LOGIN_SUCCESS, user}
   }
 
   function failure(error) {
-    return {type: userConstants.LOGIN_FAILURE, error}
+    return {type: LOGIN_FAILURE, error}
   }
 };
 
 const logout = () => {
   userService.logout();
-  return {type: userConstants.LOGOUT};
+  return {type: LOGOUT};
 };
 
 export const userActions = {

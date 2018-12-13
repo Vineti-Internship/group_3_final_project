@@ -1,6 +1,6 @@
 import React from 'react';
 import {SectionInfo} from "./sectionInfoComponent";
-import {ExamsInfo} from "./examsInfoComponent";
+import ExamsInfo from "./examsInfoComponent";
 
 class TeacherView extends React.Component {
   studentsFakeData = [

@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import './App.css';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
-import {LoginPage} from "./pages/loginPage";
-import {HomePage} from "./pages/homePage";
-import {PrivateRoute} from "./components/privateRoute";
-import {NotFoundPage} from "./pages/notFoundPage";
+import LoginPage from "./pages/loginPage";
+import HomePage from "./pages/homePage";
+import PrivateRoute from "./components/privateRoute";
+import NotFoundPage from "./pages/notFoundPage";
 import Header from "./components/header";
 import connect from "react-redux/es/connect/connect";
-import {popupActions} from "./ations/popupAction";
-import {Popup} from "./components/popups/popup";
+import {close} from "./ations/popupAction";
+import Popup from "./components/popups/popup";
 
 class App extends Component {
 
@@ -20,7 +20,7 @@ class App extends Component {
 
   //callBack function used to close popup..................
   closePopup = () => {
-    this.props.dispatch(popupActions.close());
+    this.props.dispatch(close());
   };
 
   render() {

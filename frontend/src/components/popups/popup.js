@@ -7,7 +7,7 @@ import PopupAddExamContent from "./popupAddExamContent";
 import {ADD_EXAM_POPUP} from "../../constants/popupConstants";
 
 
-export class Popup extends React.Component {
+export default class Popup extends React.Component {
 
   contextData = {};//To store data from context.............
 

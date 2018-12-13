@@ -3,15 +3,15 @@ import Typography from "@material-ui/core/Typography";
 import Fab from "@material-ui/core/es/Fab/Fab";
 import AddIcon from '@material-ui/icons/Add';
 import Grid from '@material-ui/core/Grid';
-import {ExamsLists} from "./examsLists";
-import {popupActions} from "../../ations/popupAction";
+import ExamsLists from "./examsLists";
+import {open} from "../../ations/popupAction";
 import connect from "react-redux/es/connect/connect";
 import {ADD_EXAM_POPUP} from "../../constants/popupConstants";
 
 class ExamsInfo extends React.Component {
 
   addExamClickHandler = () => {
-    this.props.dispatch(popupActions.open(ADD_EXAM_POPUP));
+    this.props.dispatch(open(ADD_EXAM_POPUP));
   };
 
   render() {
@@ -40,5 +40,4 @@ function mapStateToProps(state) {
   };
 }
 
-const connectedExamsInfo = connect(mapStateToProps)(ExamsInfo);
-export {connectedExamsInfo as ExamsInfo};
+export default connect(mapStateToProps)(ExamsInfo);
