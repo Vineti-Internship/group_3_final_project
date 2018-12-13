@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
   def destroy
     @user = user
     @user.authentication_token = nil
-    render json: status: :created
+    render json: @user
   end
 
   # Only allow a trusted parameter "white list" through.
