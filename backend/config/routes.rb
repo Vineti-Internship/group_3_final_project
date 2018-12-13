@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :exams
   resources :courses
   resources :sessions, only: [:create, :destroy]
-
+  # post '/sessions' to: 'sessions#create'
+  # delete '/session/:email' 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
