@@ -5,7 +5,7 @@ import TeacherView from "../components/teacher/teacherView";
 =======
 import {TeacherView} from "../components/teacher/teacherView";
 >>>>>>> temporary comment student view import
-import {StudentView} from "../components/students/StudentView";
+// import {StudentView} from "../components/students/StudentView";
 
 class HomePage extends React.Component{
   render() {
