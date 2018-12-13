@@ -19,6 +19,7 @@ class SessionsController < ApplicationController
     render json: @user
   end
 
+  private
   # Only allow a trusted parameter "white list" through.
   def session_params
     params.require(:session).permit(:email, :password)
