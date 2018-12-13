@@ -8,7 +8,7 @@ class Student < ApplicationRecord
   has_many :grades, dependent: :destroy
   has_and_belongs_to_many :sections, dependent: :destroy
   
-  belogs_to :admin
+  belongs_to :admin
 
   # Add validators
   validates :first_name, :last_name, :password, :email, presence: true

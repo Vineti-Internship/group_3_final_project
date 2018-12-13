@@ -4,7 +4,7 @@ class Section < ApplicationRecord
 
   belongs_to :course
   belongs_to :teacher
-  belogs_to :admin
+  belongs_to :admin
 
   # Add validators
   validates :name, presence: true

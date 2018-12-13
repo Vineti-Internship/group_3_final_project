@@ -7,7 +7,7 @@ class Teacher < ApplicationRecord
 
   has_one :section, dependent: :destroy
   
-  belogs_to :admin
+  belongs_to :admin
 
   # Add Validators
   validates :first_name, :last_name, :password, :email, presence: true
