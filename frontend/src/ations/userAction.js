@@ -1,7 +1,12 @@
 import {userService} from "../services/userService";
-import {LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE, LOGOUT} from "../constants/userConstants";
+import {
+  LOGIN_REQUEST,
+  LOGIN_SUCCESS,
+  LOGIN_FAILURE,
+  LOGOUT
+} from "../constants/userConstants";
 
-const login = (username, password) => {
+const login = (email, password) => {
 
   const request = (user) => {
     return {type: LOGIN_REQUEST, user}
@@ -16,9 +21,9 @@ const login = (username, password) => {
   };
 
   return dispatch => {
-    dispatch(request({username}));
+    dispatch(request({email}));
 
-    userService.login(username, password)
+    userService.login(email, password)
       .then(
         user => {
           dispatch(success(user));

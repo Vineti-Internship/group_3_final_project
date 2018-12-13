@@ -14,7 +14,7 @@ class LoginPage extends React.Component {
     this.props.dispatch(userActions.logout());
 
     this.state = {
-      username: '',
+      email: '',
       password: '',
     };
   }
@@ -27,18 +27,18 @@ class LoginPage extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
 
-    const { username, password } = this.state;
+    const { email, password } = this.state;
     const { dispatch } = this.props;
-    if (username && password) {
-      // console.log('username :', username);
-      // console.log('password :', password);
+    if (email && password) {
+      console.log('email :', email);
+      console.log('password :', password);
 
-      dispatch(userActions.login(username, password));
+      dispatch(userActions.login(email, password));
     }
   };
 
   render(){
-    const { username, password } = this.state;
+    const { email, password } = this.state;
     return(
       <div className='login-component'>
         <Typography variant="h3" color="inherit">
@@ -46,8 +46,8 @@ class LoginPage extends React.Component {
         </Typography>
         <form name="form" onSubmit={this.handleSubmit}>
           <div>
-            <Typography>Username</Typography>
-            <Input type="text" name="username" value={username} onChange={this.handleChange} />
+            <Typography>email</Typography>
+            <Input type="text" name="email" value={email} onChange={this.handleChange} />
           </div>
 
           <div>
