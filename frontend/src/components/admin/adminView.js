@@ -1,25 +1,43 @@
 import React from 'react';
 import CoursesTable from "./coursesTable";
+import connect from "react-redux/es/connect/connect";
+import {open} from "../../ations/popupAction";
+import {ADD_COURSE_POPUP} from "../../constants/popupConstants";
 
-export default class AdminView extends React.Component {
+class AdminView extends React.Component {
 
   render() {
     return (
       <>
         <div className='admin-content-component'>
-          <h3>All Courses</h3>
+          <h2>All Courses</h2>
+          <button onClick={this.addCourseClickHandler}>addCourse</button>
           <CoursesTable/>
         </div>
         <div className='admin-content-component'>
-          <h3>All Sections</h3>
+          <h2>All Sections</h2>
         </div>
         <div className='admin-content-component'>
-          <h3>All Students</h3>
+          <h2>All Students</h2>
         </div>
         <div className='admin-content-component'>
-          <h3>All Teachers</h3>
+          <h2>All Teachers</h2>
         </div>
       </>
     );
+  };
+
+  addCourseClickHandler = () => {
+    this.props.dispatch(open(ADD_COURSE_POPUP));
   }
 }
+
+const mapStateToProps = (state) => {
+  const {isOpened, popupType} = state.popup;
+  return {
+    isOpened,
+    popupType
+  };
+};
+
+export default connect(mapStateToProps)(AdminView);

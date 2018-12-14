@@ -1,6 +1,6 @@
 import React from 'react';
 import CoursesTableItem from "./courseesTableItem";
-import {dataLoader} from "../../services/apiService";
+import {dataLoader, EVENT_DATA_SHOULD_UPDATE} from "../../services/apiService";
 
 class CoursesTable extends React.Component {
 
@@ -10,7 +10,7 @@ class CoursesTable extends React.Component {
 
   constructor(props) {
     super(props);
-    // document.addEventListener(EVENT_DATA_SHOULD_UPDATE, this.loadData);
+    document.addEventListener(EVENT_DATA_SHOULD_UPDATE, this.loadData);
   }
 
   loadData = async () => {
