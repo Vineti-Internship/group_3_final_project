@@ -13,6 +13,8 @@ export const dataLoader = (path, action = 'GET', data = null, item = null) => {
       return deleteData(url, item);
     case 'PATCH':
       return patchData(url, data, item);
+    default:
+      console.log('Wrong case');
   }
 };
 
