@@ -4,7 +4,6 @@ export const EVENT_DATA_SHOULD_UPDATE = 'shouldUpdate';
 export const dataLoader = (path, action = 'GET', data = null, item = null) => {
   const url = HOST_NAME + path;
 
-  console.log("url: ", url);
   switch (action) {
     case 'GET':
       return getData(url);
