@@ -13,5 +13,7 @@ Rails.application.routes.draw do
   # resources :sessions, only: [:create, :destroy]
   post '/sessions', to: 'sessions#create'
   post '/sessions/del', to: 'sessions#destroy'
+  put '/addsectionstostudents', to: 'students#update'
+  put '/addstudentstosections', to: 'sections#update'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
