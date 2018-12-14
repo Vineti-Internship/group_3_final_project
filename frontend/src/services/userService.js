@@ -1,10 +1,6 @@
 const HOST = 'http://localhost:3000';
 const LOGIN_URL = '/sessions';
-
-const logout = () => {
-  //remove user from local storage to log user out..................
-  localStorage.removeItem('user');
-};
+const LOGOUT_URL = '/sessions/del';
 
 const handleResponse = (response) => {
   return response.text().then(text => {
@@ -43,6 +39,33 @@ const login = (email, password) => {
 
       return user;
     });
+};
+
+const logout = async () => {
+  const user = JSON.parse(localStorage.getItem('user'));
+  if (user) {
+    try {
+      const response = await fetch(HOST + LOGOUT_URL, {
+        method: 'POST',
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          email: user.email
+        })
+      });
+
+      if (response.ok) {
+        localStorage.removeItem('user');
+      } else {
+        throw new Error('Logout Failed!');
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  } else {
+    localStorage.removeItem('user');
+  }
 };
 
 export const userService = {
