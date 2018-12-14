@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     @user = user
 
     if @user&.valid_password?(params[:password])
-      render json: @user.authentication_token
+      render json: @user
     else
       head(:unauthorized)
     end
@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
 
     @user = user
     @user.authentication_token = nil
-    render json: @user.authentication_token
+    render json: @user
   end
 
   private
