@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_14_144905) do
+ActiveRecord::Schema.define(version: 2018_12_14_163856) do
 
   create_table "admins", force: :cascade do |t|
     t.string "nickname"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2018_12_14_144905) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string "authentication_token", limit: 30
-    t.integer "type", default: 1
+    t.integer "type_id", default: 1
     t.index ["authentication_token"], name: "index_admins_on_authentication_token", unique: true
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2018_12_14_144905) do
     t.string "name", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "admin_id"
+    t.integer "admin_id", default: 1
     t.index ["admin_id"], name: "index_courses_on_admin_id"
   end
 
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2018_12_14_144905) do
     t.integer "course_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "admin_id"
+    t.integer "admin_id", default: 1
     t.index ["admin_id"], name: "index_exams_on_admin_id"
     t.index ["course_id"], name: "index_exams_on_course_id"
   end
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2018_12_14_144905) do
     t.integer "student_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "admin_id"
+    t.integer "admin_id", default: 1
     t.index ["admin_id"], name: "index_grades_on_admin_id"
     t.index ["exam_id"], name: "index_grades_on_exam_id"
     t.index ["student_id"], name: "index_grades_on_student_id"
@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 2018_12_14_144905) do
     t.integer "teacher_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "admin_id"
+    t.integer "admin_id", default: 1
     t.index ["admin_id"], name: "index_sections_on_admin_id"
     t.index ["course_id"], name: "index_sections_on_course_id"
     t.index ["teacher_id"], name: "index_sections_on_teacher_id"
@@ -88,8 +88,8 @@ ActiveRecord::Schema.define(version: 2018_12_14_144905) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string "authentication_token", limit: 30
-    t.integer "admin_id"
-    t.integer "type", default: 3
+    t.integer "admin_id", default: 1
+    t.integer "type_id", default: 3
     t.index ["admin_id"], name: "index_students_on_admin_id"
     t.index ["authentication_token"], name: "index_students_on_authentication_token", unique: true
     t.index ["email"], name: "index_students_on_email", unique: true
@@ -107,8 +107,8 @@ ActiveRecord::Schema.define(version: 2018_12_14_144905) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string "authentication_token", limit: 30
-    t.integer "admin_id"
-    t.integer "type", default: 2
+    t.integer "admin_id", default: 1
+    t.integer "type_id", default: 2
     t.index ["admin_id"], name: "index_teachers_on_admin_id"
     t.index ["authentication_token"], name: "index_teachers_on_authentication_token", unique: true
     t.index ["email"], name: "index_teachers_on_email", unique: true
