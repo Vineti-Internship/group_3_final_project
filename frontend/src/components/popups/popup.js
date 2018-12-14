@@ -1,22 +1,21 @@
 import React from 'react';
 import Dialog from "@material-ui/core/es/Dialog/Dialog";
-import DialogTitle from "@material-ui/core/es/DialogTitle/DialogTitle";
-import DialogActions from "@material-ui/core/es/DialogActions/DialogActions";
-import Button from "@material-ui/core/es/Button/Button";
 import PopupAddExamContent from "./popupAddExamContent";
-import {ADD_EXAM_POPUP} from "../../constants/popupConstants";
+import {ADD_COURSE_POPUP, ADD_EXAM_POPUP} from "../../constants/popupConstants";
+import PopupAddCourseContent from "./popupAddCourseContent";
 
 
 export default class Popup extends React.Component {
-
-  contextData = {};//To store data from context.............
-
   //choose which one popup content should render...............
-  addPopupContent = (type = null) => {
+  addPopupContent = (type = null, open, close) => {
     switch (type) {
       case ADD_EXAM_POPUP:
         return (
-          <PopupAddExamContent sendValueToPopup={this.getEnteredValuesFromContent}/>
+          <PopupAddExamContent open={open} close={close} type={type}/>
+        );
+      case ADD_COURSE_POPUP:
+        return (
+          <PopupAddCourseContent open={open} close={close} type={type}/>
         );
       default:
         return (
@@ -27,36 +26,12 @@ export default class Popup extends React.Component {
     }
   };
 
-  //Get input values from child component..................
-  getEnteredValuesFromContent = (data) => {
-    for (let key in data){
-      this.contextData[key] = data[key];
-    }
-  };
-
-  //Send input values to Back-end and close popup................
-  submitHandler = () => {
-    //ToDo ~call function from backend and send this.contextData................
-    this.props.close();
-  };
-
   render() {
     const {open, close, type} = this.props;
 
     return (
       <Dialog open={open} onClose={close}>
-        <DialogTitle>
-          Create Exam
-        </DialogTitle>
-        {this.addPopupContent(type)}
-        <DialogActions>
-          <Button onClick={close} color="primary">
-            Cancel
-          </Button>
-          <Button onClick={this.submitHandler} color="primary">
-            Submit
-          </Button>
-        </DialogActions>
+        {this.addPopupContent(type, open, close)}
       </Dialog>
     );
   }

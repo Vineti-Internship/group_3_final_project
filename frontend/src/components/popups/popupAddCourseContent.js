@@ -2,14 +2,17 @@ import React from 'react';
 import DialogContent from "@material-ui/core/es/DialogContent/DialogContent";
 import DialogContentText from "@material-ui/core/es/DialogContentText/DialogContentText";
 import TextField from "@material-ui/core/es/TextField/TextField";
+import DialogTitle from "@material-ui/core/es/DialogTitle";
 import Button from "@material-ui/core/es/Button";
 import DialogActions from "@material-ui/core/es/DialogActions";
-import DialogTitle from "@material-ui/core/es/DialogTitle";
+import {dataLoader} from "../../services/apiService";
 
 
-class PopupAddExamContent extends React.Component {
+class PopupAddCourseContent extends React.Component {
 
-  contextData = {};//To store data from context.............
+  contextData = {
+    admin_id: JSON.parse(localStorage.getItem('user')).admin.id
+  };//To store data from context.............
 
   changeHandler = (event) => {
     let data = {};
@@ -28,34 +31,27 @@ class PopupAddExamContent extends React.Component {
   //Send input values to Back-end and close popup................
   submitHandler = () => {
 
-    //ToDo ~call function from backend and send this.contextData................
+    dataLoader('courses','POST',this.contextData);
     this.props.close();
   };
-
 
   render() {
     return (
       <>
-        <DialogContent>
-          <DialogTitle>
-            Popup
-          </DialogTitle>
+        <DialogTitle>
+          Popup
+        </DialogTitle>
 
+        <DialogContent>
           <DialogContentText>
-            Add exam details
+            Add course details
           </DialogContentText>
           <TextField
-            id="topic"
+            id="name"
             onChange={this.changeHandler}
             autoFocus
             margin="dense"
-            label="Exam Topic"
-            fullWidth/>
-          <TextField
-            id="date"
-            onChange={this.changeHandler}
-            margin="dense"
-            label="Exam Date"
+            label="Course name"
             fullWidth/>
         </DialogContent>
 
@@ -72,4 +68,4 @@ class PopupAddExamContent extends React.Component {
   }
 }
 
-export default PopupAddExamContent;
+export default PopupAddCourseContent;
