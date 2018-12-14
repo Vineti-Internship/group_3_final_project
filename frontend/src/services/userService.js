@@ -19,16 +19,15 @@ const handleResponse = (response) => {
       const error = (data && data.message) || response.statusText;
       return Promise.reject(error);
     }
-
     return data;
   });
 };
 
-const login = (username, password) => {
+const login = (email, password) => {
   const requestOptions = {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({username, password})
+    body: JSON.stringify({email, password})
   };
 
   return fetch(HOST + LOGIN_URL, requestOptions)
@@ -36,9 +35,10 @@ const login = (username, password) => {
     .then(user => {
       // login successful if there's a jwt token in the response
 
-      if (user.token) {
+      if (user.authentication_token) {
         // store user details and jwt token in local storage to keep user logged in between page refreshes
         localStorage.setItem('user', JSON.stringify(user));
+        document.location.href = '/'; //redirect to home page.......................
       }
 
       return user;
@@ -49,38 +49,3 @@ export const userService = {
   login,
   logout,
 };
-
-// const _longin = async (username, password) => {
-//   try {
-//     const response = await fetch(HOST + LOGIN_URL, {
-//       method: 'POST',
-//       headers: {
-//         "Content-Type": "application/json"
-//       },
-//       body: JSON.stringify({
-//         username,
-//         password
-//       })
-//     });
-//
-//     if (response.ok) {
-//       const user = await response.json();
-//
-//       if (user.token) {
-//         // store user details and jwt token in local storage to keep user logged in between page refreshes
-//         localStorage.setItem('user', JSON.stringify(user));
-//       }
-//     } else {
-//       if (response.status === 401) {
-//         // auto logout if 401 response returned from api
-//         logout();
-//         window.location.reload(true);
-//       }
-//     }
-//
-//     throw new Error('Login Failed!');
-//
-//   } catch (error) {
-//     console.error(error);
-//   }
-// };
