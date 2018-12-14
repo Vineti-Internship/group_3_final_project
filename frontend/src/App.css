@@ -1,2 +1,41 @@
 .App {
+    margin: 0;
+    padding: 0;
+}
+
+*{
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+li {
+    list-style-type: none;
+    padding:0;
+    margin:0;
+}
+
+ul {
+    padding-inline-start: 0;
+}
+
+/*admin view style.......................*/
+
+.admin-content-component {
+    background-color: cadetblue;
+    width: 100%;
+    height: 500px;
+}
+
+.table-component {
+    height: 400px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.courses-table-item {
+    margin-bottom: 2px;
+    width: 100%;
+    background-color: aqua;
 }
