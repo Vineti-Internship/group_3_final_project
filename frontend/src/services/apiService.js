@@ -8,7 +8,7 @@ export const dataLoader = (path, action = 'GET', data = null, item = null) => {
     case 'GET':
       return getData(url);
     case 'POST':
-      return postData(url, data);
+      return postData(url, data, item);
     case 'DELETE':
       return deleteData(url, item);
     case 'PATCH':
@@ -18,14 +18,18 @@ export const dataLoader = (path, action = 'GET', data = null, item = null) => {
   }
 };
 
-const postData = async (url, data) => {
+const postData = async (url, data, item = null) => {
+  if(item){
+    url = url + '/' + item;
+  }
+
   try {
     const response = await fetch(url, {
       method: 'POST',
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(data)
+      body: (item) ? data : JSON.stringify(data)
     });
 
     if (response.ok) {
