@@ -3,6 +3,7 @@ import CoursesTable from "./coursesTable";
 import connect from "react-redux/es/connect/connect";
 import {open} from "../../actions/popupAction";
 import {ADD_COURSE_POPUP} from "../../constants/popupConstants";
+import SectionsTable from "./sectionsTable";
 
 class AdminView extends React.Component {
 
@@ -16,6 +17,7 @@ class AdminView extends React.Component {
         </div>
         <div className='admin-content-component'>
           <h2>All Sections</h2>
+          <SectionsTable/>
         </div>
         <div className='admin-content-component'>
           <h2>All Students</h2>
