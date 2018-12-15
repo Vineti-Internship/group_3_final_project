@@ -3,7 +3,7 @@ import {bindActionCreators} from "redux";
 import {open} from "../../actions/popupAction";
 import {connect} from "react-redux";
 import {dataLoader} from "../../services/apiService";
-import {EDIT_STUDENT_POPUP} from "../../constants/popupConstants";
+import {BIND_SECTION_POPUP, EDIT_STUDENT_POPUP} from "../../constants/popupConstants";
 
 class StudentsTableItem extends React.Component {
 
@@ -15,6 +15,10 @@ class StudentsTableItem extends React.Component {
     this.props.dispatch(open(EDIT_STUDENT_POPUP, this.props.data.id));
   };
 
+  bindToSectionHandler = () => {
+    this.props.dispatch(open(BIND_SECTION_POPUP, this.props.data.id));
+  };
+
   render() {
     return (
       <ul className='table-item'>
@@ -24,6 +28,7 @@ class StudentsTableItem extends React.Component {
         <li style={{width:'40px'}}>{this.props.data.id}</li>
         <button style={{color: 'red'}} onClick={this.deleteStudentButtonClickHandler}>Delete</button>
         <button style={{color: 'green'}} onClick={this.editStudentButtonClickHandler}>Rename</button>
+        <button style={{color: 'green'}} onClick={this.bindToSectionHandler}>Bind to section</button>
       </ul>
     );
   }
