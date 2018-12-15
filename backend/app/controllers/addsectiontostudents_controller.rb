@@ -1,4 +1,4 @@
-class AddSectionsToStudentsController < ApplicationController
+class AddsectionstostudentsController < ApplicationController
     before_action :set_student, only: [:create, :destroy]
   
     # POST /students/1
