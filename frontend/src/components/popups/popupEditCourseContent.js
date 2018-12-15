@@ -36,7 +36,6 @@ class PopupEditCourseContent extends React.Component {
   };
 
   render() {
-    console.log('aaaaaaaaaaa : ', this.props);
     return (
       <>
         <DialogTitle>
