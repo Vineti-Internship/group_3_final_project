@@ -27,8 +27,6 @@ class PopupAddSectionContent extends React.Component {
     for (let key in data){
       this.contextData[key] = data[key];
     }
-
-    console.log(this.contextData);
   };
 
   //Send input values to Back-end and close popup................
