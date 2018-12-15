@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from "react-redux";
-import {userActions} from "../ations/userAction";
+import {userActions} from "../actions/userAction";
 import Button from '@material-ui/core/Button';
 import Input from '@material-ui/core/Input';
 import Typography from "@material-ui/core/Typography";

@@ -4,7 +4,7 @@ import Fab from "@material-ui/core/es/Fab/Fab";
 import AddIcon from '@material-ui/icons/Add';
 import Grid from '@material-ui/core/Grid';
 import ExamsLists from "./examsLists";
-import {open} from "../../ations/popupAction";
+import {open} from "../../actions/popupAction";
 import connect from "react-redux/es/connect/connect";
 import {ADD_EXAM_POPUP} from "../../constants/popupConstants";
 
