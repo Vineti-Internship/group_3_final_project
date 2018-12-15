@@ -19,7 +19,6 @@ export const dataLoader = (path, action = 'GET', data = null, item = null) => {
 };
 
 const postData = async (url, data) => {
-  console.log(url);
   try {
     const response = await fetch(url, {
       method: 'POST',

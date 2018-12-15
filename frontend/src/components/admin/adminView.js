@@ -2,8 +2,9 @@ import React from 'react';
 import CoursesTable from "./coursesTable";
 import connect from "react-redux/es/connect/connect";
 import {open} from "../../actions/popupAction";
-import {ADD_COURSE_POPUP} from "../../constants/popupConstants";
+import {ADD_COURSE_POPUP, ADD_STUDENT_POPUP} from "../../constants/popupConstants";
 import SectionsTable from "./sectionsTable";
+import StudentsTable from "./studentsTable";
 
 class AdminView extends React.Component {
 
@@ -21,6 +22,8 @@ class AdminView extends React.Component {
         </div>
         <div className='admin-content-component'>
           <h2>All Students</h2>
+          <button onClick={this.addStudentClickHandler}>addStudent</button>
+          <StudentsTable/>
         </div>
         <div className='admin-content-component'>
           <h2>All Teachers</h2>
@@ -31,6 +34,10 @@ class AdminView extends React.Component {
 
   addCourseClickHandler = () => {
     this.props.dispatch(open(ADD_COURSE_POPUP));
+  };
+
+  addStudentClickHandler = () => {
+    this.props.dispatch(open(ADD_STUDENT_POPUP));
   }
 }
 
