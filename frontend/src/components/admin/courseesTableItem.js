@@ -17,7 +17,7 @@ class CoursesTableItem extends React.Component {
 
   render() {
     return (
-      <ul className='courses-table-item'>
+      <ul className='table-item'>
         <li>{this.props.data.name}</li>
         <button style={{color: 'red'}} onClick={this.deleteCourseButtonClickHandler}>Delete</button>
         <button style={{color: 'green'}} onClick={this.editCourseButtonClickHandler}>Rename</button>
