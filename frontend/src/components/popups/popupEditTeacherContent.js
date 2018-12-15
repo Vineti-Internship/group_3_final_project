@@ -11,7 +11,7 @@ import {dataLoader} from "../../services/apiService";
 class PopupEditTeacherContent extends React.Component {
 
   contextData = {
-    admin_id: JSON.parse(localStorage.getItem('user')).admin.id,
+    admin_id: JSON.parse(localStorage.getItem('user')).id,
   };//To store data from context.............
 
   changeHandler = (event) => {

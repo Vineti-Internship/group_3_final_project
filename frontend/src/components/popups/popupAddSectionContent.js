@@ -11,7 +11,7 @@ import {dataLoader} from "../../services/apiService";
 class PopupAddSectionContent extends React.Component {
 
   contextData = {
-    admin_id: JSON.parse(localStorage.getItem('user')).admin.id,
+    admin_id: JSON.parse(localStorage.getItem('user')).id,
     course_id: this.props.courseId
   };//To store data from context.............
 
