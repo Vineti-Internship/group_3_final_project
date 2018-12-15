@@ -26,6 +26,7 @@ class SectionsTableItem extends React.Component {
         <li>{this.props.data.name}</li>
         <li>{course.name}</li>
         <li>{teacher.first_name + ' ' + teacher.last_name}</li>
+        <li style={{width:'40px'}}>{this.props.data.id}</li>
         <button style={{color: 'red'}} onClick={this.deleteSectionButtonClickHandler}>Delete</button>
         <button style={{color: 'green'}} onClick={this.editSectionButtonClickHandler}>Rename</button>
       </ul>

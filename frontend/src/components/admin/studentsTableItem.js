@@ -21,6 +21,7 @@ class StudentsTableItem extends React.Component {
         <li>{this.props.data.first_name}</li>
         <li>{this.props.data.last_name}</li>
         <li>{this.props.data.email}</li>
+        <li style={{width:'40px'}}>{this.props.data.id}</li>
         <button style={{color: 'red'}} onClick={this.deleteStudentButtonClickHandler}>Delete</button>
         <button style={{color: 'green'}} onClick={this.editStudentButtonClickHandler}>Rename</button>
       </ul>
