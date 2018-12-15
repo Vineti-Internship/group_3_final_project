@@ -14,6 +14,6 @@ class Admin < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   # Validation for admin nickname
-  validates :nickname, presence: true, uniqueness: true
+  validates :nickname, presence: true, uniqueness: true, on: :create
 
 end

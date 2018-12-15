@@ -11,6 +11,7 @@ class Student < ApplicationRecord
   belongs_to :admin
 
   # Add validators
-  validates :first_name, :last_name, :password, :email, presence: true
+  validates :first_name, :last_name, :password, :email, presence: true, on: :create
+
 
 end

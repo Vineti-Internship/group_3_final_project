@@ -7,5 +7,6 @@ class Section < ApplicationRecord
   belongs_to :admin
 
   # Add validators
-  validates :name, presence: true
+  validates :name, presence: true, on: :create
+
 end
