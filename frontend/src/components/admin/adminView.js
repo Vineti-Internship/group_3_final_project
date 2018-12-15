@@ -1,7 +1,7 @@
 import React from 'react';
 import CoursesTable from "./coursesTable";
 import connect from "react-redux/es/connect/connect";
-import {open} from "../../ations/popupAction";
+import {open} from "../../actions/popupAction";
 import {ADD_COURSE_POPUP} from "../../constants/popupConstants";
 
 class AdminView extends React.Component {

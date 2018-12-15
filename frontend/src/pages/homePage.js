@@ -1,8 +1,8 @@
 import React from 'react';
 import connect from "react-redux/es/connect/connect";
-//import TeacherView from "../components/teacher/teacherView";
+// import TeacherView from "../components/teacher/teacherView";
 // import StudentView from "../components/student/studentView";
-// import AdminView from "../components/admin/adminView";
+import AdminView from "../components/admin/adminView";
 
 class HomePage extends React.Component{
   render() {
@@ -11,7 +11,7 @@ class HomePage extends React.Component{
       <div>
         {/*<TeacherView />*/}
          {/*<StudentView />*/}
-        {/*<AdminView />*/}
+        <AdminView />
       </div>
     );
   }

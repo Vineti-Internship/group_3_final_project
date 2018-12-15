@@ -53,6 +53,11 @@ button {
     background-color: #263238;
 }
 
+.courses-table-item li {
+    width: 300px;
+    display: inline-block;
+}
+
 /*colorA: '#263238',*/
 /*colorB: '#4f5b62',*/
 /*buttonColor: '#000a12'*/

@@ -1,6 +1,6 @@
 import React from 'react';
 import {SectionInfo} from "./sectionInfoComponent";
-import ExamsInfo from "./examsInfoComponent";
+// import ExamsInfo from "./examsInfoComponent";
 
 class TeacherView extends React.Component {
   studentsFakeData = [
@@ -48,7 +48,7 @@ class TeacherView extends React.Component {
     return (
       <>
         <SectionInfo studentsFakeData = {this.studentsFakeData}/>
-        <ExamsInfo studentsFakeData = {this.studentsFakeData} examsFakeData={this.examsFakeData}/>
+        {/*<ExamsInfo studentsFakeData = {this.studentsFakeData} examsFakeData={this.examsFakeData}/>*/}
       </>
     );
   }

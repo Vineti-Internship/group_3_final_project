@@ -3,6 +3,7 @@ import Dialog from "@material-ui/core/es/Dialog/Dialog";
 import PopupAddExamContent from "./popupAddExamContent";
 import {ADD_COURSE_POPUP, ADD_EXAM_POPUP, EDIT_COURSE_POPUP} from "../../constants/popupConstants";
 import PopupAddCourseContent from "./popupAddCourseContent";
+import PopupEditCourseContent from "./popupEditCourseContent";
 
 
 export default class Popup extends React.Component {
@@ -16,6 +17,10 @@ export default class Popup extends React.Component {
       case ADD_COURSE_POPUP:
         return (
           <PopupAddCourseContent open={open} close={close} type={type}/>
+        );
+      case EDIT_COURSE_POPUP:
+        return (
+          <PopupEditCourseContent open={open} close={close} type={type} elementId={additionalData}/>
         );
       default:
         return (
