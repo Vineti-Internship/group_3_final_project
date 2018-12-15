@@ -3,7 +3,7 @@ class AddsectionstostudentsController < ApplicationController
   
     # POST /students/1
     def create
-      @student = Student.sections.append(Section.find(id = sectiontostudent_params])
+      @student = Student.sections.append(Section.find(id = sectiontostudent_params)
   
       if @student.save
         render json: @student.sections, status: :created, location: @student.sections
