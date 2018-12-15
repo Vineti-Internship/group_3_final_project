@@ -1,40 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import {withStyles} from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
 
-const styles = {
-  root: {
-    flexGrow: 1,
-  },
-  grow: {
-    flexGrow: 1,
-  }
+const logoutHandler = () => {
+  document.location.href = '/login'
 };
 
-const Header = (props) => {
-  const {classes} = props;
+const Header = () => {
   return (
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6" color="inherit" className={classes.grow}>
-            State Engineering University of Armenia
-          </Typography>
-          <Button variant="contained" href="/login">
-            Logout
-          </Button>
-        </Toolbar>
-      </AppBar>
+    <div className='header'>
+      <h2>
+        State Engineering University of Armenia
+      </h2>
+      <button onClick={logoutHandler}>
+        Logout
+      </button>
     </div>
   );
 };
 
-Header.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles)(Header);
+export default Header;

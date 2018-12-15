@@ -16,6 +16,17 @@ body {
     margin-inline-end: 0px;
 }
 
+a {
+    text-decoration: none;
+}
+
+.header {
+    background-color: #263238;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
 li {
     list-style-type: none;
     padding: 0;
