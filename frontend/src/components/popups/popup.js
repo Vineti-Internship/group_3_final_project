@@ -1,13 +1,13 @@
 import React from 'react';
 import Dialog from "@material-ui/core/es/Dialog/Dialog";
 import PopupAddExamContent from "./popupAddExamContent";
-import {ADD_COURSE_POPUP, ADD_EXAM_POPUP} from "../../constants/popupConstants";
+import {ADD_COURSE_POPUP, ADD_EXAM_POPUP, EDIT_COURSE_POPUP} from "../../constants/popupConstants";
 import PopupAddCourseContent from "./popupAddCourseContent";
 
 
 export default class Popup extends React.Component {
   //choose which one popup content should render...............
-  addPopupContent = (type = null, open, close) => {
+  addPopupContent = (type = null, open, close, additionalData) => {
     switch (type) {
       case ADD_EXAM_POPUP:
         return (
@@ -27,11 +27,11 @@ export default class Popup extends React.Component {
   };
 
   render() {
-    const {open, close, type} = this.props;
+    const {open, close, type, additionalData} = this.props;
 
     return (
       <Dialog open={open} onClose={close}>
-        {this.addPopupContent(type, open, close)}
+        {this.addPopupContent(type, open, close, additionalData)}
       </Dialog>
     );
   }

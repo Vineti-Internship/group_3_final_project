@@ -2,7 +2,8 @@ import {CLOSE_POPUP, OPEN_POPUP} from "../constants/popupConstants";
 
 const initialState = {
   isOpened: false,
-  popupType: ''
+  popupType: '',
+  data: null
 };
 
 const popup = (state = initialState, action) => {
@@ -10,12 +11,14 @@ const popup = (state = initialState, action) => {
     case OPEN_POPUP:
       return {
         isOpened: true,
-        popupType: action.state.popupType
+        popupType: action.state.popupType,
+        data: action.state.data
       };
     case CLOSE_POPUP:
       return {
         isOpened: false,
-        popupType: ''
+        popupType: '',
+        data: null
       };
     default:
       return state;

@@ -7,7 +7,7 @@ import PrivateRoute from "./components/privateRoute";
 import NotFoundPage from "./pages/notFoundPage";
 import Header from "./components/header";
 import connect from "react-redux/es/connect/connect";
-import {close} from "./ations/popupAction";
+import {close} from "./actions/popupAction";
 import Popup from "./components/popups/popup";
 
 class App extends Component {
@@ -24,7 +24,7 @@ class App extends Component {
   };
 
   render() {
-    const {isOpened, popupType} = this.props;
+    const {isOpened, popupType, data} = this.props;
 
     return (
       <div className="App">
@@ -38,17 +38,18 @@ class App extends Component {
         </BrowserRouter>
 
         {/*use one popup container to show all popups in it...........*/}
-        <Popup open={isOpened} close={this.closePopup} type={popupType}/>
+        <Popup open={isOpened} close={this.closePopup} type={popupType} additionalData={data}/>
       </div>
     );
   }
 }
 
 const mapStateToProps = (state) => {
-  const {isOpened, popupType} = state.popup;
+  const {isOpened, popupType, data} = state.popup;
   return {
     isOpened,
-    popupType
+    popupType,
+    data
   };
 };
 
