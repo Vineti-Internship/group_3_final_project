@@ -5,7 +5,7 @@ export default class StudentView extends React.Component {
   render() {
     return (
       <>
-        StudentView
+        <h1>StudentView</h1>
       </>
     );
   }
