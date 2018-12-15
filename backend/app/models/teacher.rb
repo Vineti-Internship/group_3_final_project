@@ -10,5 +10,6 @@ class Teacher < ApplicationRecord
   belongs_to :admin
 
   # Add Validators
-  validates :first_name, :last_name, :password, :email, presence: true
+  validates :first_name, :last_name, :password, :email, presence: true, on: :create
+
 end
