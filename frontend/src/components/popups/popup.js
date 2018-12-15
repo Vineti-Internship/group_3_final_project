@@ -4,9 +4,9 @@ import PopupAddExamContent from "./popupAddExamContent";
 import {
   ADD_COURSE_POPUP,
   ADD_EXAM_POPUP,
-  ADD_SECTION_POPUP, ADD_STUDENT_POPUP,
+  ADD_SECTION_POPUP, ADD_STUDENT_POPUP, ADD_TEACHER_POPUP,
   EDIT_COURSE_POPUP,
-  EDIT_SECTION_POPUP, EDIT_STUDENT_POPUP
+  EDIT_SECTION_POPUP, EDIT_STUDENT_POPUP, EDIT_TEACHER_POPUP
 } from "../../constants/popupConstants";
 import PopupAddCourseContent from "./popupAddCourseContent";
 import PopupEditCourseContent from "./popupEditCourseContent";
@@ -14,6 +14,8 @@ import PopupAddSectionContent from "./popupAddSectionContent";
 import PopupEditSectionContent from "./popupEditSectionContent";
 import PopupAddStudentContent from "./popupAddStudentContent";
 import PopupEditStudentContent from "./popupEditStudentContent";
+import PopupAddTeacherContent from "./popupAddTeacherContent";
+import PopupEditTeacherContent from "./popupEditTeacherContent";
 
 
 export default class Popup extends React.Component {
@@ -46,7 +48,15 @@ export default class Popup extends React.Component {
         );
       case EDIT_STUDENT_POPUP:
         return (
-          <PopupEditStudentContent open={open} close={close} twype={type} elementId={additionalData}/>
+          <PopupEditStudentContent open={open} close={close} type={type} elementId={additionalData}/>
+        );
+      case ADD_TEACHER_POPUP:
+        return (
+          <PopupAddTeacherContent open={open} close={close} type={type}/>
+        );
+      case EDIT_TEACHER_POPUP:
+        return (
+          <PopupEditTeacherContent open={open} close={close} type={type} elementId={additionalData}/>
         );
       default:
         return (
