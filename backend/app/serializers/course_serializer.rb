@@ -3,5 +3,6 @@ class CourseSerializer < ActiveModel::Serializer
 
   has_one :admin
   has_many :exams
+  has_many :sections
   
 end
