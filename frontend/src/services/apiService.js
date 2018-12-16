@@ -6,7 +6,7 @@ export const dataLoader = (path, action = 'GET', data = null, item = null) => {
 
   switch (action) {
     case 'GET':
-      return getData(url);
+      return getData(url, item);
     case 'POST':
       return postData(url, data, item);
     case 'DELETE':
@@ -19,7 +19,7 @@ export const dataLoader = (path, action = 'GET', data = null, item = null) => {
 };
 
 const postData = async (url, data, item = null) => {
-  if(item){
+  if (item) {
     url = url + '/' + item;
   }
 
@@ -33,7 +33,7 @@ const postData = async (url, data, item = null) => {
     });
 
     if (response.ok) {
-      if(item){
+      if (item) {
         document.dispatchEvent(new Event(EVENT_DATA_SHOULD_UPDATE));
       }
       const jsonResponse = await response.json();
@@ -48,7 +48,11 @@ const postData = async (url, data, item = null) => {
   }
 };
 
-const getData = async (url) => {
+const getData = async (url, item = null) => {
+  if (item) {
+    url = url + '/' + item;
+  }
+
   try {
     const response = await fetch(url);
 
