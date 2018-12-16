@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   resources :exams
   resources :courses
   # resources :sessions, only: [:create, :destroy]
-  # post '/sessions', to: 'sessions#create'
-  # post '/sessions/del', to: 'sessions#destroy'
+  post '/sessions', to: 'sessions#create'
+  post '/sessions/del', to: 'sessions#destroy'
   post '/addsectionstostudents/:id', to: 'addsectionstostudents#create'
   # put '/addstudentstosections/:id', to: 'sections#update'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
