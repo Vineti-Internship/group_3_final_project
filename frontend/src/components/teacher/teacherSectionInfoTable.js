@@ -16,6 +16,7 @@ class TeacherSectionInfoTable extends React.Component {
     const user = JSON.parse(window.localStorage.getItem('user'));
     const data = await dataLoader('sections', 'GET', null, user.section.id);
 
+    if(data)
     this.initTableItems(data.students);
   };
 

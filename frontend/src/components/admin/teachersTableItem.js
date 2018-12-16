@@ -23,7 +23,7 @@ class TeachersTableItem extends React.Component {
         <li>{this.props.data.first_name + ' ' + this.props.data.last_name}</li>
         <li>{this.props.data.email}</li>
         <li style={{width:'40px'}}>{this.props.data.id}</li>
-        <li style={{width:'40px'}}>{this.props.data.section.name}</li>
+        <li style={{width:'40px'}}>{(this.props.data.section)?this.props.data.section.name : 'noSections'}</li>
         <button style={{color: 'red'}} onClick={this.deleteTeacherButtonClickHandler}>Delete</button>
         <button style={{color: 'green'}} onClick={this.editTeacherButtonClickHandler}>Rename</button>
       </ul>
