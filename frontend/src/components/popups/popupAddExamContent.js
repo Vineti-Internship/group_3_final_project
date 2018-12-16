@@ -10,7 +10,8 @@ import Button from "@material-ui/core/es/Button";
 
 class PopupAddExamContent extends React.Component {
   contextData = {
-    admin_id: JSON.parse(localStorage.getItem('user')).id
+    admin_id: JSON.parse(localStorage.getItem('user')).id,
+    section_id: JSON.parse(localStorage.getItem('user')).section.id
   };//To store data from context.............
 
   changeHandler = (event) => {
@@ -29,8 +30,7 @@ class PopupAddExamContent extends React.Component {
 
   //Send input values to Back-end and close popup................
   submitHandler = () => {
-    console.log(this.contextData);
-    // dataLoader('courses','POST',this.contextData);
+    dataLoader('exams','POST',this.contextData);
     this.props.close();
   };
 
@@ -55,9 +55,8 @@ class PopupAddExamContent extends React.Component {
           <TextField
             id="date"
             onChange={this.changeHandler}
-            autoFocus
             margin="dense"
-            label="Date topic"
+            label="Date"
             fullWidth/>
         </DialogContent>
 
