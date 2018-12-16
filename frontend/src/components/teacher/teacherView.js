@@ -8,7 +8,8 @@ class TeacherView extends React.Component {
       <>
         <UserInfo/>
         <div className='admin-content-component'>
-          <h2>All Students</h2>
+          <h2>All Students of {JSON.parse(window.localStorage.getItem('user')).section.name} Section</h2>
+
           <TeacherSectionInfoTable/>
         </div>
         <div className='admin-content-component'>
