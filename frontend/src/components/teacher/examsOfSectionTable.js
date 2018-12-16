@@ -1,6 +1,5 @@
 import React from 'react';
 import {dataLoader, EVENT_DATA_SHOULD_UPDATE} from "../../services/apiService";
-import TeacherSectionInfoTableItem from "./teacherSectionInfoTableItem";
 import ExamsOfSectionTableItem from "./examsOfSectionTableItem";
 
 class ExamsOfSectionTable extends React.Component {

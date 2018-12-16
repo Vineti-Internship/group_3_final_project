@@ -1,5 +1,5 @@
 import React from 'react';
-import {getGradesForSection, getGradesForStudents} from "../../helpers/backEndHalper";
+import {getGradesForSection} from "../../helpers/backEndHalper";
 
 class TeacherSectionInfoTableItem extends React.Component {
 
