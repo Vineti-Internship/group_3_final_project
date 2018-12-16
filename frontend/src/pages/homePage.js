@@ -10,8 +10,6 @@ class HomePage extends React.Component {
     const user = JSON.parse(localStorage.getItem('user'));
     let view;
 
-    console.log('user type_id :', user.type_id);
-
     switch (user.type_id) {
       case 1: {
         view = <AdminView/>;
