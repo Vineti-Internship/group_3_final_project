@@ -1,11 +1,12 @@
 import React from 'react';
+import UserInfo from "../userInfo";
 
 export default class StudentView extends React.Component {
 
   render() {
     return (
       <>
-        <h1>StudentView</h1>
+        <UserInfo/>
       </>
     );
   }
