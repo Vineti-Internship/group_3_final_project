@@ -1,6 +1,11 @@
 import React from 'react';
 import UserInfo from "../userInfo";
 import TeacherSectionInfoTable from "./teacherSectionInfoTable";
+import ExamsOfSectionTable from "./examsOfSectionTable";
+import {open} from "../../actions/popupAction";
+import {ADD_EXAM_POPUP} from "../../constants/popupConstants";
+import {bindActionCreators} from "redux";
+import connect from "react-redux/es/connect/connect";
 
 class TeacherView extends React.Component {
   render() {
@@ -14,11 +19,20 @@ class TeacherView extends React.Component {
         </div>
         <div className='admin-content-component'>
           <h2>All Exams</h2>
-          {/*<TeacherSectionInfoTable/>*/}
+          <button onClick={this.addExamClickHandler}>addExam</button>
+          <ExamsOfSectionTable/>
         </div>
       </>
     );
   }
+
+  addExamClickHandler = () => {
+    this.props.dispatch(open(ADD_EXAM_POPUP));
+  };
 }
 
-export default TeacherView;
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({open}, dispatch);
+};
+
+export default connect(mapDispatchToProps)(TeacherView);
