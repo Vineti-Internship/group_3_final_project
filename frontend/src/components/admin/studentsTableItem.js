@@ -19,6 +19,10 @@ class StudentsTableItem extends React.Component {
     this.props.dispatch(open(BIND_SECTION_POPUP, this.props.data.id));
   };
 
+  renderStudentsSections = (sections) => {
+    return sections.map((section, index) => (<li style={{width:'40px'}} key={index}>{section.name}</li>));
+  };
+
   render() {
     return (
       <ul className='table-item'>
@@ -29,6 +33,7 @@ class StudentsTableItem extends React.Component {
         <button style={{color: 'red'}} onClick={this.deleteStudentButtonClickHandler}>Delete</button>
         <button style={{color: 'green'}} onClick={this.editStudentButtonClickHandler}>Rename</button>
         <button style={{color: 'green'}} onClick={this.bindToSectionHandler}>Bind to section</button>
+        {this.renderStudentsSections(this.props.data.sections)}
       </ul>
     );
   }

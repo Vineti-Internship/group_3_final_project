@@ -48,6 +48,10 @@ button {
     cursor: pointer;
 }
 
+.user-info-horizontal li {
+    display: inline-block;
+}
+
 /*admin view style.......................*/
 
 .admin-content-component {
@@ -70,7 +74,7 @@ button {
 }
 
 .table-item li {
-    width: 200px;
+    width: 250px;
     display: inline-block;
 }
 

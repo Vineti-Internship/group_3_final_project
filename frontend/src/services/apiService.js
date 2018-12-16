@@ -33,6 +33,9 @@ const postData = async (url, data, item = null) => {
     });
 
     if (response.ok) {
+      if(item){
+        document.dispatchEvent(new Event(EVENT_DATA_SHOULD_UPDATE));
+      }
       const jsonResponse = await response.json();
 
       document.dispatchEvent(new Event(EVENT_DATA_SHOULD_UPDATE));
