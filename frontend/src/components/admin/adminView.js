@@ -6,12 +6,14 @@ import {ADD_COURSE_POPUP, ADD_STUDENT_POPUP, ADD_TEACHER_POPUP} from "../../cons
 import SectionsTable from "./sectionsTable";
 import StudentsTable from "./studentsTable";
 import TeachersTable from "./teachersTable";
+import UserInfo from "../userInfo";
 
 class AdminView extends React.Component {
 
   render() {
     return (
       <>
+        <UserInfo/>
         <div className='admin-content-component'>
           <h2>All Courses</h2>
           <button onClick={this.addCourseClickHandler}>addCourse</button>
