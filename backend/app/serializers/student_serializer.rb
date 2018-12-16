@@ -3,6 +3,6 @@ class StudentSerializer < ActiveModel::Serializer
   
   has_many :sections
   has_one :admin
-
+  has_many :grades
 
 end
