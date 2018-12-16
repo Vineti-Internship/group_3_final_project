@@ -1,15 +1,20 @@
 import React from 'react';
 import UserInfo from "../userInfo";
-
-// import ExamsInfo from "./examsInfoComponent";
+import TeacherSectionInfoTable from "./teacherSectionInfoTable";
 
 class TeacherView extends React.Component {
   render() {
     return (
       <>
         <UserInfo/>
-        {/*<SectionInfo studentsFakeData = {this.studentsFakeData}/>*/}
-        {/*<ExamsInfo studentsFakeData = {this.studentsFakeData} examsFakeData={this.examsFakeData}/>*/}
+        <div className='admin-content-component'>
+          <h2>All Students</h2>
+          <TeacherSectionInfoTable/>
+        </div>
+        <div className='admin-content-component'>
+          <h2>All Exams</h2>
+          {/*<TeacherSectionInfoTable/>*/}
+        </div>
       </>
     );
   }
