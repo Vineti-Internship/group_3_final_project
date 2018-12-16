@@ -5,5 +5,6 @@ class SectionSerializer < ActiveModel::Serializer
   has_one :teacher
   has_many :students
   has_one :admin
+  has_many :exams
 
 end
