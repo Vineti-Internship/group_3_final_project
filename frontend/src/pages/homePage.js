@@ -23,6 +23,9 @@ class HomePage extends React.Component {
         view = <StudentView/>;
         break;
       }
+      default: {
+        view = <>Wrong TypeId</>
+      }
     }
 
     return (
