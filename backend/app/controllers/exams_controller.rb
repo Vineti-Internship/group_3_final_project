@@ -1,5 +1,6 @@
 class ExamsController < ApplicationController
   before_action :set_exam, only: [:show, :update, :destroy]
+  before_action 
 
   # GET /exams
   def index
@@ -15,12 +16,16 @@ class ExamsController < ApplicationController
 
   # POST /exams
   def create
-    @exam = Exam.new(exam_params)
+    my_params = exam_params
+    current_section = Section.find(id = my_params[:section_id])
+    current_course_id = current_section.course[:id]
+    my_params[:course_id] = current_course_id
+    @exam = Exam.new(my_params)
 
     if @exam.save
       render json: @exam, status: :created, location: @exam
     else
-      render json: @exam.errors, status: :unprocessable_entity
+      render json: my_params, status: :unprocessable_entity
     end
   end
 
@@ -39,6 +44,7 @@ class ExamsController < ApplicationController
   end
 
   private
+    
     # Use callbacks to share common setup or constraints between actions.
     def set_exam
       @exam = Exam.find(params[:id])
